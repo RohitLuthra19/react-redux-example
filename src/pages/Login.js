@@ -69,11 +69,11 @@ class Login extends Component {
     };
 
     userLogin(e) {
-        this.props.onLogin(this.props.email, this.props.password);
-        this.setState({
+        this.props.onLogin(this.state.email, this.state.password);
+        /* this.setState({
             email: '',
             password: ''
-        });
+        }); */
         e.preventDefault();
     }
 
@@ -122,8 +122,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onLogin: (username, password) => {          // dispatch1: () =>
-            dispatch(login(username, password));    // dispatch(actionCreators);
+        onLogin: (email, password) => {          // dispatch1: () =>
+            dispatch(login(email, password));    // dispatch(actionCreators);
         }
     }
 }
